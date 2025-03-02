@@ -53,18 +53,15 @@ function configurarHeaderDesaparecendo() {
     let ultimoScroll = window.scrollY;
 
     // Garante que o header começa visível
-    header.style.position = 'relative';
-    header.style.transition = 'top 0.5s ease';
+    header.style.top = '0';
 
     window.addEventListener('scroll', () => {
         const scrollAtual = window.scrollY;
 
         if (scrollAtual > ultimoScroll && scrollAtual > 100) {
-            // Rolar pra baixo - header sobe e some
-            header.style.top = '-100px';
+            header.style.top = '-100px'; // Sobe e some
         } else {
-            // Rolar pra cima ou no topo - header volta
-            header.style.top = '0';
+            header.style.top = '0'; // Volta pro topo
         }
 
         ultimoScroll = scrollAtual;
